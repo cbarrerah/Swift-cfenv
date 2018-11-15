@@ -20,8 +20,9 @@ import LoggerAPI
 
 extension ConfigurationManager {
   public var isLocal: Bool {
-    let vcapApplication = self["VCAP_APPLICATION"]
-    return (vcapApplication == nil)
+    //let vcapApplication = self["VCAP_APPLICATION"]
+    let localTest = self.url.contains("localhost")
+    return (localTest == true)
   }
 
   public var app: [String : Any] {
